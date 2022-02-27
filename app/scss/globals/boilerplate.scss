@@ -25,13 +25,13 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--very-dk-blue);
-  background-image: url('/images/bg-mobile.png');
+  background-image: url('../images/bg-mobile.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%;
   
   @include breakpoint(medium) {
-    background-image: url('/images/bg-desktop.png');
+    background-image: url('../images/bg-desktop.png');
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 100% 50%;
