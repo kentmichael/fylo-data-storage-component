@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="dist/style.css">
+  <title>Frontend Mentor | Fylo data storage component</title>
+</head>
+<body>
+  <main class="component container">
+    <div class="storage">
+      <img src="images/logo.svg" alt="logo" class="storage__logo">
+      <div class="storage__link">
+        <a href="#">
+          <img src="images/icon-document.svg" alt="Document Icon" class="storage__link--doc">
+        </a>
+        <a href="#">
+          <img src="images/icon-folder.svg" alt="Folder Icon" class="storage__link--folder">
+        </a>
+        <a href="#">
+          <img src="images/icon-upload.svg" alt="Upload Icon" class="storage__link--upload">
+        </a>
+      </div>
+    </div>
+
+    <div class="data">
+      <div class="data__content">
+        You’ve used <span>815 GB</span> of your storage
+      </div>
+      <meter min="0" low="100" high="900" max="1000" value="825" optimum="825" class="data__meter">
+        <div class="data__meter-gauge">
+          <span></span>
+        </div>
+      </meter>
+      <p>0 GB<span>1000 GB</span></p>
+      <div class="data__number">
+        <span>185</span> GB Left
+      </div>
+    </div>
+  </main>
+</body>
+</html>

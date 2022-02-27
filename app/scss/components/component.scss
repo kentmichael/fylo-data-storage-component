@@ -1,0 +1,230 @@
+@use '../util' as *;
+
+.component {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: rem(15);
+
+  @include breakpoint(medium) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: rem(30);
+  }
+}
+
+.storage {
+  background-color: var(--dark-blue);
+  border-radius: rem(10) rem(100) rem(10) rem(10);
+  padding: rem(40);
+  flex: 1;
+
+  @include breakpoint(medium) {
+    max-width: rem(350);
+    padding: rem(42);
+  }
+
+  &__logo {
+    width: rem(140);
+    height: rem(40);
+    margin-bottom: rem(32);
+  }
+
+  &__link {
+    display: flex;
+
+    :not(:last-child) {
+      margin-right: rem(17);
+    }
+    
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--very-dk-blue);
+      width: rem(50);
+      height: rem(50);
+      border-radius: rem(10);
+    }
+
+    &--doc {
+      width: rem(21);
+      height: rem(26);
+    }
+
+    &--folder {
+      width: rem(25);
+      height: rem(21);
+    }
+
+    &--upload {
+      width: rem(25);
+      height: rem(18);
+    }
+  }
+}
+
+.data {
+  padding: rem(36) rem(32) rem(55);
+  position: relative;
+  background-color: var(--dark-blue);
+  text-align: center;
+  border-radius: rem(10) rem(10) rem(10) rem(10);
+  flex: 1;
+
+  @include breakpoint(medium) {
+    align-self: flex-end;
+    max-height: rem(155);
+    padding: rem(40);
+  }
+
+  &__content {
+    margin-bottom: rem(20);
+
+    span {
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    @include breakpoint(medium) {
+      text-align: center;
+    }
+
+    @include breakpoint(large) {
+      text-align: left;
+    }
+  }
+
+  &__meter {
+    margin-bottom: rem(13);
+    height: rem(28);
+    width: 100%;
+    border-radius: rem(20);
+    -moz-appearance: none;
+    //appearance: none;
+
+    //Firefox
+    background: none;
+    background-color: var(--very-dk-blue);
+    padding: rem(5);
+    
+    &::-moz-meter-bar {
+      background-image: linear-gradient(to right, hsl(350, 100%, 82%), hsl(342, 75%, 62%));
+      background-size: 100% 100%;
+      border-radius: rem(10);
+      border: none;
+    }
+
+    &::-webkit-meter-bar {
+      background: none; /* Required to get rid of the default background property */
+      background-color: var(--very-dk-blue);
+      border: none;
+    }
+
+    &::-webkit-meter-optimum-value {
+      background-image: linear-gradient(to right, hsl(350, 100%, 82%), hsl(342, 75%, 62%));
+      background-size: 100% 100%;
+      border-radius: rem(10);
+      border: none;
+    }
+  }
+
+  &__meter-gauge {
+    margin-bottom: rem(13);
+    height: rem(28);
+    width: 100%;
+    border-radius: rem(20);
+    background-color: var(--very-dk-blue);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: rem(5);
+
+    span {
+      height: 100%;
+      width: 82.5%;
+      background-image: linear-gradient(to right, hsl(350, 100%, 82%), hsl(342, 75%, 62%));
+      background-size: 100% 100%;
+      border-radius: rem(10);
+      border: none;
+      font-weight: 700;
+    }
+  }
+
+  p {
+    text-align: left;
+    color: var(--white);
+    color: var(--white);
+    font-weight: 700;
+    margin: 0;
+
+    span {
+      float: right;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: rem(10) rem(10) rem(10) rem(10);
+    padding: rem(17) rem(28);
+    background-color: var(--white);
+    color: var(--grayish-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+
+    span {
+      color: var(--very-dk-blue);
+      font-size: rem(35);
+      font-weight: 700;
+      margin-right: rem(5);
+    }
+
+    @include breakpoint(medium) {
+      border-radius: rem(10) rem(10) rem(10) rem(10);
+      top: 0;
+      left: 50%;
+      right: 0;
+      bottom: 50%;
+      transform: translate(-50%, -70%);
+      width: fit-content;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: rem(10);
+        border-style: solid;
+        border-color: var(--white) transparent transparent transparent;
+      }
+    }
+
+    @include breakpoint(large) {
+      border-radius: rem(10) rem(10) rem(0) rem(10);
+      top: 0;
+      left: 60%;
+      right: 0;
+      bottom: 50%;
+      width: fit-content;
+      transform: translate(0%, -70%);
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 100%;
+        transform: translateX(-100%);
+        border-width: rem(10);
+        border-style: solid;
+        border-color: var(--white) var(--white) transparent transparent;
+      }
+    }
+  }
+}
